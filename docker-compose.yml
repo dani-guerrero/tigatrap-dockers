@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    build: pg_docker/
+    restart: always
+    volumes:
+      - ./volumes/restore:/docker-entrypoint-initdb.d/
+      - ./volumes/postgres_data:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: tigadata
+
+  web:
+    build: .
+    command: python3 tigatrapp-server/manage.py runserver 0.0.0.0:8080
+    volumes:
+      - .:/django-docker
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    links:
+      - db
+    restart: always
+
+  pgadmin:
+    restart: always
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'your-email@example.com'
+      PGADMIN_DEFAULT_PASSWORD: 'password123'
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'True'
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 0
+    ports:
+      - "80:80"
+    volumes:
+      - ./volumes/pg_admin_data:/root/.pgadmin
+

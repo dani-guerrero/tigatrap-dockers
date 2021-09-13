@@ -1,0 +1,4 @@
+#su postgres
+dropdb tigadata
+createdb -O tigadata_user tigadata
+pg_restore -d tigadata  -U tigadata_user /docker-entrypoint-initdb.d/tigadata_db_20210729.gz

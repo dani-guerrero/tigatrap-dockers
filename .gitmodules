@@ -1,0 +1,3 @@
+[submodule "tigatrapp-server"]
+	path = tigatrapp-server
+	url = https://github.com/dani-guerrero/tigatrapp-server

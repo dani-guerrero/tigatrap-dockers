@@ -1,0 +1,4 @@
+- set missing libraries versions in requirements_common
+- db restore is not yet automated
+- see where files (photos from users) go
+- implement backup system
