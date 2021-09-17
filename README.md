@@ -99,7 +99,7 @@
    docker-compose build
    ```
 5. Migrate changes to db
-  ```sh
+   ```sh
    ./project_utils/migrate.sh
    ```
 6. Mount (or copy) your local files folder into the media volume folder
