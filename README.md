@@ -98,12 +98,16 @@
    ```sh
    docker-compose build
    ```
-5. Mount (or copy) your local files folder into the media volume folder
+5. Migrate changes to db
+  ```sh
+   ./project_utils/migrate.sh
+   ```
+6. Mount (or copy) your local files folder into the media volume folder
    ```sh
    mkdir volumes/media
    mount PATH_TO_FILES volumes/media/ --bind
    ```
-6. Run docker images
+7. Run docker images
    ```sh
    docker-compose up
    ```
