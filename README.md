@@ -92,7 +92,7 @@
    ```
 3. Add your local settings file to the submodule
    ```sh
-   cp PATH_TO_SETTINGS/settings_local.py tigatrapp-server/tigaserver_project/
+   cp settings_local.py tigatrapp-server/tigaserver_project/
    ``` 
 4. Compile docker images
    ```sh
