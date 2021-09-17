@@ -6,12 +6,6 @@ services:
     volumes:
       - ./volumes/restore:/docker-entrypoint-initdb.d/
       - ./volumes/postgres_data:/var/lib/postgresql/data
-
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_DB: tigadata
-
   web:
     build: .
     command: python3 tigatrapp-server/manage.py runserver 0.0.0.0:8080
