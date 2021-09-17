@@ -90,15 +90,19 @@
    ```sh
    cp PATH_TO_BACKUP/tigadata_db_XXXXXXXX.gz volumes/restore/
    ```
-3. Compile docker images
+3. Add your local settings file to the submodule
+   ```sh
+   cp PATH_TO_SETTINGS/settings_local.py tigatrapp-server/tigaserver_project/
+   ``` 
+4. Compile docker images
    ```sh
    docker-compose build
    ```
-4. Mount (or copy) your local files folder into the media volume folder
+5. Mount (or copy) your local files folder into the media volume folder
    ```sh
    mount PATH_TO_FILES volumes/media/ --bind
    ```
-5. Run docker images
+6. Run docker images
    ```sh
    docker-compose up
    ```
