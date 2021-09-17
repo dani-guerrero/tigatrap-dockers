@@ -100,6 +100,7 @@
    ```
 5. Mount (or copy) your local files folder into the media volume folder
    ```sh
+   mkdir volumes/media
    mount PATH_TO_FILES volumes/media/ --bind
    ```
 6. Run docker images
