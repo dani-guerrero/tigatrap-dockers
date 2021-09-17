@@ -84,13 +84,17 @@
 
 1. Clone the repo with its submodules
    ```sh
-   git clone https://github.com/dani-guerrero/tigatrap-dockers.git --recursive
+   git clone https://github.com/dani-guerrero/tigatrapp-dockers.git --recursive
    ```
 2. Compile docker images
    ```sh
    docker-compose build
    ```
-3. Run docker images
+3. Mount your local files folder into the media volume local folder
+   ```sh
+   mount PATH_TO_FILES volumes/media/ --bind
+   ```
+4. Run docker images
    ```sh
    docker-compose up
    ```
