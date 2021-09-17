@@ -86,15 +86,19 @@
    ```sh
    git clone https://github.com/dani-guerrero/tigatrapp-dockers.git --recursive
    ```
-2. Compile docker images
+2. Copy your backup file into the restore volume folder
+   ```sh
+   cp PATH_TO_BACKUP/tigadata_db_XXXXXXXX.gz volumes/restore/
+   ```
+3. Compile docker images
    ```sh
    docker-compose build
    ```
-3. Mount your local files folder into the media volume local folder
+4. Mount (or copy) your local files folder into the media volume folder
    ```sh
    mount PATH_TO_FILES volumes/media/ --bind
    ```
-4. Run docker images
+5. Run docker images
    ```sh
    docker-compose up
    ```
