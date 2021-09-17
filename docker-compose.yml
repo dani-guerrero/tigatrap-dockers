@@ -7,9 +7,6 @@ services:
       - ./volumes/restore:/docker-entrypoint-initdb.d/
       - ./volumes/postgres_data:/var/lib/postgresql/data
 
-    ports:
-      - "5432:5432"
-
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
@@ -39,6 +36,8 @@ services:
       PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 0
     ports:
       - "80:80"
+    links:
+      - db
     volumes:
       - ./volumes/pg_admin_data:/root/.pgadmin
 
