@@ -1,2 +1,2 @@
-docker-compose run web python3 tigaserver/manage.py makemigrations
-docker-compose run web python3 tigaserver/manage.py migrate
+docker-compose run web python3 tigatrapp-server/manage.py makemigrations
+docker-compose run web python3 tigatrapp-server/manage.py migrate
